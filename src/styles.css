@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+
+::-webkit-search-cancel-button>body {
+    width: 900px;
+    height: 900px;
+    background: #E3E3E3 0% 0% no-repeat padding-box;
+    opacity: 1;
+}
+
+body {
+    background-color: #F7F7F7;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

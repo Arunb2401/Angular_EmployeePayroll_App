@@ -1,0 +1,159 @@
+<body>
+    <div id="formId" class="form-content" name="myForm">
+        <form #Empform="ngForm" class="form">
+            <div class="form-head ">Employee Payroll Form</div>
+            <div class="row-content ">
+                <label for="name" class="label text">Name</label>
+                <input required minlength="3" name="name" #name="ngModel" type=" text " [(ngModel)]="employees.name " class=" input " id="name " placeholder="Enter name" />
+                <div *ngIf="name.invalid && (name.dirty || name.touched) " class="alert">
+                    <div *ngIf="name.errors?.[ 'required'] ">
+                        * Required Field.
+                    </div>
+                    <div *ngIf="name.errors?.[ 'minlength'] ">
+                        Name must be at least 3 characters long.
+                    </div>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text " for="profile">Profile image</label>
+                <div class="profile-radio-content ">
+                    <label>
+            <input type="radio"  required [(ngModel)]="employees.profilePic" name="profilePic"
+              value="../assets/profile-images/Ellipse -1.png "  />
+              
+            <img class="profile" src="assets\profile-images\Female4.png" />
+          </label>
+                    <label>
+            <input type="radio"  required  ngModel name="profilePic "
+              value="../assets/profile-images/Ellipse -2.png "  />
+            <img class="profile " id="image2 " src="assets\profile-images\Male1.png " />
+          </label>
+                    <label>
+            <input type="radio"   ngModel name="profilePic"
+              value="../assets/profile-images/Ellipse -5.png"  />
+            <img class="profile " src="assets\profile-images\Female2.png" />
+          </label>
+                    <label>
+            <input type="radio"   ngModel name="profilePic"
+              value="../assets/profile-images/Ellipse -7.png"  />
+            <img class="profile "  src="assets\profile-images\Male3.png" />
+          </label>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="gender">Gender</label>
+                <div>
+                    <input type="radio" [(ngModel)]="employees.gender" name="gender" value="male" required/>
+
+                    <label class="text">Male</label>
+                    <input type="radio" id="female" ngModel name="gender" value="female" />
+                    <label class="text">Female</label>
+                    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+                        <div *ngIf="name.errors?.[ 'required']">
+                            *Required Field.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="department">Department</label>
+                <div *ngFor="let dept of departmentList">
+                    <input class="checkbox" type="checkbox" name="department" value="dept.value" [checked]="dept.isSelected " (change)="deptChange(dept.id) " />
+                    <label class="text">{{dept.value}}</label>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="salary">Salary</label>
+                <select id="salary" required ngModel name="salary">
+                  <div *ngIf="name.errors?.['required']">*Please Enter Salary</div>
+          <option value="100000 ">100000</option>
+          <option value="200000 ">200000</option>
+          <option value="300000 ">300000</option>
+          <option value="400000 ">400000</option>
+          <option value="500000 ">500000</option>
+          <option value="600000 ">600000</option>
+          <option value="700000 ">700000</option>
+          <option value="800000 ">800000</option>
+          <option value="900000 ">900000</option>
+          <option value="1000000 ">1000000</option>
+        </select>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="startDate">Start Date</label>
+                <div>
+                    <select ngModel name="day">
+            <option value="1 ">1</option>
+            <option value="2 ">2</option>
+            <option value="3, ">3</option>
+            <option value="4, ">4</option>
+            <option value="5, ">5</option>
+            <option value="6, ">6</option>
+            <option value="7, ">7</option>
+            <option value="8, ">8</option>
+            <option value="9, ">9</option>
+            <option value="10, ">10</option>
+            <option value="11, ">11</option>
+            <option value="12, ">12</option>
+            <option value="13, ">13</option>
+            <option value="14, ">14</option>
+            <option value="15, ">15</option>
+            <option value="16, ">16</option>
+            <option value="17, ">17</option>
+            <option value="18, ">18</option>
+            <option value="19, ">19</option>
+            <option value="20, ">20</option>
+            <option value="21, ">21</option>
+            <option value="22, ">22</option>
+            <option value="23, ">23</option>
+            <option value="24, ">24</option>
+            <option value="25, ">25</option>
+            <option value="26, ">26</option>
+            <option value="27, ">27</option>
+            <option value="28, ">28</option>
+            <option value="29, ">29</option>
+            <option value="30, ">30</option>
+            <option value="31, ">31</option>
+          </select>
+                    <select class="month" ngModel name="month">
+            <option value="January ">January</option>
+            <option value="February ">February</option>
+            <option value="March ">March</option>
+            <option value="April ">April</option>
+            <option value="May ">May</option>
+            <option value="June ">June</option>
+            <option value="July ">July</option>
+            <option value="August ">August</option>
+            <option value="September ">September</option>
+            <option value="October ">October</option>
+            <option value="November ">November</option>
+            <option value="December ">December</option>
+          </select>
+                    <select name="year" ngModel>
+            <option value="2021 ">2021</option>
+            <option value="2020 ">2020</option>
+            <option value="2019 ">2019</option>
+            <option value="2018 ">2018</option>
+            <option value="2017 ">2017</option>
+            <option value="2016 ">2016</option>
+            <option value="2015 ">2015</option>
+            <option value="2014 ">2014</option>
+            <option value="2013 ">2013</option>
+            <option value="2012 ">2012</option>
+          </select>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text " for="notes">Notes</label>
+                <textarea id="notes" ngModel class="input note" name="Notes" placeholder="Enter the Note... "></textarea>
+            </div>
+            <div class="buttonParent">
+                <a href=" " class="resetButton button cancelButton">Cancel</a>
+                <div class="submit-reset">
+                    <div ng-disabled="myForm.name.$dirty && myForm.name.$invalid || myForm.gender.$dirty && myForm.gender.$invalid"></div>
+                    <button type=submit (click)="postData(Empform)" class=" button submitButton " id="submitButton ">Submit</button>
+                    <button type="reset " class="resetButton button"><a href="http://localhost:4200/employee-form ">Reset</a></button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>

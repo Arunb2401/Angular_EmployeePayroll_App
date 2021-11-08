@@ -1,0 +1,210 @@
+/* input.ng-touched.ng-invalid {} */
+
+.form-content {
+    min-height: calc(100% - 80px);
+    padding-top: 20px;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    width: 55%;
+    padding: 44px 60px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 3px 6px gray;
+    border: 1px solid #f5f5f5;
+    border-radius: 8px;
+    opacity: 1;
+}
+
+.form-head {
+    font: normal normal bold 28px/37px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    text-transform: capitalize;
+    opacity: 1;
+    margin-bottom: 20px;
+}
+
+.row-content {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    align-items: center;
+    width: 100%;
+}
+
+.month {
+    margin: 10px;
+}
+
+.label {
+    min-width: 140px;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+.text {
+    font-size: 18px;
+    padding-left: 5px;
+    color: #42515f;
+    opacity: 1;
+    font-family: Roboto;
+}
+
+.input.ng-invalid {
+    border-color: 1px red;
+    width: 700px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.note {
+    height: 104px;
+    margin-top: 20px;
+    width: 700px;
+}
+
+.profile-radio-content {
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-radio-content>label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.profile {
+    width: 40px;
+    border-radius: 50%;
+    margin-left: 12px;
+}
+
+select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    font: normal normal normal 16px Roboto;
+    letter-spacing: 0px;
+    color: #42515f;
+    background-color: transparent;
+}
+
+.buttonParent {
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button {
+    font: normal normal normal 18px/26px Roboto;
+    /* // font-size     : 20px;
+    // font-family   : Roboto; */
+    letter-spacing: 0px;
+    color: #42515f;
+    opacity: 1;
+    background: transparent;
+    border: none;
+    font-weight: 400;
+    min-width: 140px;
+    padding: 7px 7px;
+    border: 1px solid #707070;
+    cursor: pointer;
+}
+
+.submitButton {
+    border-radius: 5px;
+    background: #f7f7f7;
+    margin-right: 20px;
+    box-shadow: inset 0 0 0 0 rgb(142, 255, 142);
+    transition: ease-out 0.3s;
+    outline: none;
+}
+
+
+/* .submitButton:hover {
+    box-shadow: inset 140px 0 0 0 rgb(142, 255, 142);
+    cursor: pointer;
+    color: black;
+} */
+
+.resetButton {
+    border-radius: 5px;
+    background: #f7f7f7;
+    margin-right: 0px;
+    box-shadow: inset 0 0 0 0 rgb(255, 142, 142);
+    transition: ease-out 0.3s;
+    outline: none;
+}
+
+
+/* .resetButton:hover {
+    box-shadow: inset 140px 0 0 0 rgb(255, 142, 142);
+    cursor: pointer;
+    color: black;
+} */
+
+.cancelButton :hover {
+    background-color: #707070;
+    background: #f7f7f7;
+    text-decoration: none;
+    text-align: center;
+}
+
+@media only screen and (max-width: 960px) {
+    .cancelButton {
+        margin-left: 0px;
+    }
+    .form {
+        width: 85%;
+        padding: 44px 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .form {
+        margin-top: 10px;
+    }
+    .row {
+        flex-direction: column;
+    }
+    .uploadButton {
+        justify-content: flex-start;
+    }
+    .profile-radio-button {
+        flex-flow: wrap;
+    }
+    .submit-reset {
+        width: 100%;
+        display: flex;
+        flex-grow: 1;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    .submitButton :hover {
+        background-color: orangered;
+        margin: 0;
+    }
+    .buttonParent {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+    }
+}
+
+.alert {
+    font-size: 12px;
+    font-family: Roboto;
+    color: red;
+}

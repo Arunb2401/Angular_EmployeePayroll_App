@@ -1,0 +1,49 @@
+<div class="main-header">
+    <div class="header-content">
+        <div class="emp-detail-text">Employee Details</div>
+        <div class="wrapper">
+            <button class="search-button">
+        <mat-icon class="search-icon" alt="Search icon ">search</mat-icon>
+      </button>
+            <button class="add-button" routerLink="employee-form">
+        <mat-icon class="add-icon" alt="Add icon ">add</mat-icon>Add User
+      </button>
+        </div>
+    </div>
+</div>
+<div class="table-main">
+    <table id="table-display " class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody class="table-detail">
+            <tr *ngFor="let employee of employees">
+                <td>
+                    <img src="{{employee.profilePic}}">
+                </td>
+                <td>{{ employee.name }}</td>
+                <td>{{ employee.gender }}</td>
+                <td class="department ">{{ employee.department }}</td>
+                <td>{{ employee.salary|currency:'&#8377;' }}</td>
+                <td>{{ employee.startDate|date:'longDate' }}</td>
+                <td>
+                    <!-- {{ employee.actions }} -->
+                    <div class="action-icons ">
+                        <!-- <button type="delete " type="button "><mat-icon>delete</mat-icon></button> -->
+                        <mat-icon>delete</mat-icon>
+                        <mat-icon>create</mat-icon>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div></div>
+</div>
